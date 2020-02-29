@@ -16,6 +16,12 @@ var teamName = "";
 document.getElementById("add").addEventListener("click",addStudent);
 document.getElementById("cnf").addEventListener("click",show);
 
+$(document).keydown(function(e){
+    if(e.which === 123){
+       return false;
+    }
+});
+
 function loadIt(){
     document.getElementById("loading-spinner").style.display = "block";
     document.getElementById("main-content").style.display = "none";

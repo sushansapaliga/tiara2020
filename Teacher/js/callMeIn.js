@@ -5,6 +5,12 @@ document.getElementById("login_btn").addEventListener("click",login);
 document.getElementById("loading-spinner").style.display = "none";
 document.getElementById("main-content").style.display = "block";
 
+$(document).keydown(function(e){
+  if(e.which === 123){
+     return false;
+  }
+});
+
 function login(){
     document.getElementById("loading-spinner").style.display = "block";
     document.getElementById("main-content").style.display = "none";

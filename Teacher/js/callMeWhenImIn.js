@@ -21,6 +21,12 @@ const db = firebase.firestore();
 document.getElementById("logout_btn").addEventListener("click",logout);
 document.getElementById("addStudent").addEventListener("click",addStudent);
 
+$(document).keydown(function(e){
+  if(e.which === 123){
+     return false;
+  }
+});
+
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
   
@@ -35,11 +41,11 @@ firebase.auth().onAuthStateChanged(function(user) {
                 collegeCode = doc.data()["college_code"];
                 collegeAmount = doc.data()["amount"];
                 collegeDocId = doc.id;
-            })
+            });
             setCollegeName();
             showIt();
             getStudent();
-        })
+        });
       }
   
     } else {
@@ -95,7 +101,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
       if(!check){
         showIt();
-        window.alert("Please collect amount from the student");
+        window.alert("Please agree to terms and conditions");
         return;
       }
 
@@ -108,7 +114,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       .get().then((snapshot)=>{
           snapshot.docs.forEach(doc=>{
               count++;
-          })
+          });
 
           if(count == 0){
               db.collection("student")
@@ -130,15 +136,15 @@ firebase.auth().onAuthStateChanged(function(user) {
                       showIt();
                       window.alert("Student has been added successfully. Ask student to check email for SID.");
                       getStudent();
-                  })
+                  });
                   
-              })
+              });
           }else{
               resetTheForm();
               showIt();
               window.alert("Student already exist.");
           }
-      })
+      });
 
   }
 
@@ -166,7 +172,7 @@ firebase.auth().onAuthStateChanged(function(user) {
           collegeAmount = count *200 ; 
           setCollegeName();
           showIt();
-      })
+      });
   }
 
 function gsid(length, chars) {
