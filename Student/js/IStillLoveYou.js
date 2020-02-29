@@ -1,5 +1,9 @@
 const db = firebase.firestore();
 
+var database = firebase.database();
+var ref = database.ref("event");
+var ref1 = database.ref("Registration");
+
 var collectSID=[];
 var colName="";
 var colID = "";
@@ -10,6 +14,7 @@ var parPhone = [];
 var teamName = "";
 
 document.getElementById("add").addEventListener("click",addStudent);
+document.getElementById("cnf").addEventListener("click",show);
 
 function loadIt(){
     document.getElementById("loading-spinner").style.display = "block";
@@ -192,12 +197,38 @@ function addTeam(){
         player_email: email,
         team_name: teamName 
     }).then((data="0")=>{
+        addToRealDataBase();
         confirm("Successfully added team");
         window.location = "Event.html";
     }).catch((error)=>{
         showIt();
         confirm("Error:"+ error);
     });
+}
+
+function addToRealDataBase(){
+
+    ref = ref.child(eventName);
+    var p = ref.push();
+    var key = p.key;
+    
+    p.set({
+        team_name: teamName,
+        college_name: colName,
+        college_id: colID
+    });
+
+    ref = ref.child(key+"/student_list");
+    for(var i=0;i< collectSID.length;i++){
+        ref.push().set({
+            name: parName[i],
+            email: parEmail[i],
+            sid: collectSID[i]
+        });
+        ref1.child(collectSID[i]).push().set({
+            event: eventName
+        });
+    }
 }
 
 function checkStudentSIDIsValid(){
