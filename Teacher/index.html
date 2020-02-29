@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Tiara'20 Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-auth.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/logo.jpg"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="css/loadingspinner.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	<div id="loading-spinner">
+		<div class="limiter">
+			<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+				<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+					<div class="lds-facebook"><div></div><div></div><div></div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="main-content">
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+			 
+                    <div style="text-align: center">
+					<span class="login100-form-title " style="padding:0px 20px 30px 0px" >
+						Tiara 2020
+					</span>
+                    
+                  <span style="font-size: 30px;font-family: Poppins-Medium; ">REGISTRATIONS</span><br>   
+</div>
+					<div style="margin-top: 30px" class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+                        <span class="label-input100"><b>Username</b></span>
+						<input class="input100" type="email" id="email_field" placeholder="Type your username">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <span class="label-input100"><b>Password</b></span>
+						<input class="input100" type="password" id="password_field" placeholder="Type your password">
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+					</div>
+					
+					<div class="text-right p-t-8 p-b-31">
+						 
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" id="login_btn">Login</button>
+						</div>
+					</div>
+
+					<div class="txt1 text-center p-t-54 p-b-20">
+						<span>
+							 
+						</span>
+					</div>
+
+					<div class="flex-c-m">
+					 
+
+						<a href="#" class="login100-social-item bg2">
+							<i class="fa fa-internet-explorer"></i>
+						</a>
+
+						<a onclick="disp(0)" href="#" class="login100-social-item bg3">
+							<i  class="fa fa-question"></i>
+						</a>
+					</div>
+ 
+			 
+			</div>
+		</div>
+	</div>
+</div>
+ <!----=======================================MODAL================================================-->
+ <div  class="modal" >
+	<!-- Modal content -->
+	  <div class="modal-content">
+		  
+		   <div class="row"><br> 
+			   <div class="col-sm-12"><br>
+		<h2>how to use this panel</h2><br><br>
+	
+		
+<div class="container">
+ 
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	  <!-- Indicators -->
+	  <ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+	  </ol>
+  
+	  <!-- Wrapper for slides -->
+	  <div class="carousel-inner">
+		<div class="item active">
+			<div class="row">
+				<div class="col-md-6">
+					<img src="images/untitled.png" class="slide">
+				</div>
+				<div class="col-md-6">
+					<p style="text-align: justify;">1. Use this form to login to the Registration Panel with the USER ID and PASSWORD shared by our Student Co-odinators.</p>
+					<br>
+					<p style="text-align: justify;">2. You can visit TIARA official website or access the HELP desk by clicking on icon at the end of the login page.</p>
+					<br>
+					<p style="text-align: justify;">3. If you are having trouble in login process contact <a style="color: black;">deltasdevops@gmail.com</a>.</p>
+					<br><br><br><br></div>
+			</div>
+		  
+		</div>
+  
+		<div class="item">
+			<div class="row">
+				<div class="col-md-6">
+					<img src="images/u1.png" class="slide">
+				</div>
+				<div class="col-md-6">
+					<p style="text-align: justify;">1. You can add students of your respective college here. Add student only once - No Duplicate Entry. </p>
+					<br>
+					<p style="text-align: justify;">2. Verify you college name in the college name field. In case of wrong college name Contact : <a style="color: black;">deltasdevops@gmail.com</a>.</p>
+					<br>
+					<p style="text-align: justify;">3. Please read Terms and Conditions. This Panel is only for Regular Event Registartions.</p>
+					<br><br><br><br></div>
+			</div>
+		</div>
+	  
+		<div class="item">
+			<div class="row">
+				<div class="col-md-6">
+					<img src="images/u2.png" class="slide1">
+				</div>
+				<div class="col-md-6">
+					<p style="text-align: justify;">1. The details of students who have registered will reflect in the table. </p>
+					<br>
+					<p style="text-align: justify;">2. You can also search for students who have registered from seacrh box. Incase the student's name is not present in the table then that student should be re-registered.</p>
+					<br>
+					<p style="text-align: justify;">3. You can download the final list of students from GET PDF button.</p>
+					<br>
+					<p style="text-align: justify;">4. Any query regarding registrations or failed registration Contact : <a style="color: black;">deltasdevops@gmail.com</a>.</p>
+					<br>
+				</div>
+			</div>
+		</div>
+	  </div>
+  
+	  <!-- Left and right controls -->
+	  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+		<span class="sr-only">Previous</span>
+	  </a>
+	  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+		<span class="sr-only">Next</span>
+	  </a>
+	</div>
+  </div>
+  
+				   <button  id="hi"  class="close1" >CLOSE</button>
+				   <br><br>
+			   </div>
+		</div>
+		</div>
+</div>
+<!--===============================================================================================-->
+<script>
+	var modal = document.getElementsByClassName("modal");
+
+	var b= document.getElementsByClassName("close1");
+
+	for(var i=0;i<b.length;i++){
+	b[i].onclick = function(){
+	for(var j=0;j<modal.length;j++){
+	modal[j].style.display = "none";
+			}
+		}
+	}
+
+	function disp(loc){
+	modal[loc].style.display = "block";
+	}
+</script>
+ <style>
+@media only screen and (max-width: 600px) {
+  .slide{
+	  margin-left: -10%;
+  }
+  .slide1{
+	  margin-left: -5%;
+	  width: 90%;
+  }
+  
+}
+ .slide{
+	 padding-left: 10%;
+ }
+ .slide1{
+	 padding-left: 7%;
+	 padding-top: 10%;
+ }
+.modal {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 10; /* Sit on top */
+padding-top: 100px; /* Location of the box */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: white; /* Fallback color */
+background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+background-color: #fff;
+margin: auto;
+padding: 20px;
+border: 1px solid #888;
+width: 80%;
+border: #c82df7;
+border-style: solid;
+border-width: 2px;
+}
+
+/* The Close Button */
+.close1 {
+color: white;
+float: right;
+font-size: 16px;
+font-weight: bold;
+}
+a{
+	cursor: pointer;
+}
+.close1:hover,
+.close1:focus {
+color: #c82df7;
+text-decoration: none;
+cursor: pointer;
+ 
+}
+	 h2{
+		 color: #c82df7;
+		 text-transform: uppercase;
+		 font-weight: 600;
+		 
+	 }
+	 p{
+		 color: #c82df7;
+		 font-size: 16px;
+		 padding-top: 7%;
+		 font-weight: 600;
+		 padding-right: 20%;
+	 }
+	 #hi{
+		 padding: 10px 30px 10px 30px ;
+		 font-weight: 400;
+		 color: white;
+		 background-color: #c82df7;
+		 border: solid 0px white;
+		 box-shadow: 0px 0px 15px #c82df7;
+		 margin-top: 2%;
+	 }
+</style>
+<!--------------------------------------------------------------------------------------------------->
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA-MnNAZw6VVXQ8EjgeZmsNfGxKU5L7m4g",
+    authDomain: "tiara-ec4f6.firebaseapp.com",
+    databaseURL: "https://tiara-ec4f6.firebaseio.com",
+    projectId: "tiara-ec4f6",
+    storageBucket: "tiara-ec4f6.appspot.com",
+    messagingSenderId: "149576170774",
+    appId: "1:149576170774:web:75721e56f481ec72202437",
+    measurementId: "G-MMSJBV2NSX"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="js/callMeIn.js"></script>
+ 
+</body>
+</html>
