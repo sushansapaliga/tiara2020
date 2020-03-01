@@ -14,11 +14,11 @@ var parPhone = [];
 var teamName = "";
 
 document.getElementById("add").addEventListener("click",addStudent);
-document.getElementById("cnf").addEventListener("click",show);
+document.getElementById("cnf").addEventListener("click",eventCheck);
 
 $(document).keydown(function(e){
     if(e.which === 123){
-       return false;
+       return false;                 
     }
 });
 
@@ -32,19 +32,39 @@ function showIt(){
     document.getElementById("main-content").style.display = "block";
 }
 
-function show(){
+function eventCheck(){
     loadIt();
     if (document.getElementById("main").selectedIndex=="0"){
         confirm("Select Event Type");
         showIt();
         return;
-    }
-    else if (document.getElementById("sub").selectedIndex=="0"){
+    }else if (document.getElementById("sub").selectedIndex=="0"){
         confirm("Select an Event");
         showIt();
         return;
+    }else{
+        db.collection("closed")
+        .where("event_name","==",eventName)
+        .get().then((snapShot)=>{
+            var count=0;
+            snapShot.docs.forEach(doc=>{
+                count++;
+            });
+            if(count != 0 ){
+                showMember(0,eventName);
+                addbutton.style.display="none";
+                registrationClosed("inline");
+                showIt();
+            }else{
+                show();
+            }
+        });
     }
-     else if (document.getElementById("team").value.trim() == "" ){
+}
+
+function show(){
+    loadIt();
+    if (document.getElementById("team").value.trim() == "" ){
         confirm("Enter Team Name");
         showIt();
         return;

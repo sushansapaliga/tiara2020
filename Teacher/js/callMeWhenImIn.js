@@ -42,9 +42,13 @@ firebase.auth().onAuthStateChanged(function(user) {
                 collegeAmount = doc.data()["amount"];
                 collegeDocId = doc.id;
             });
+            if(collegeName == ""){
+              window.location="index.html";
+            }else{
             setCollegeName();
             showIt();
             getStudent();
+            }
         });
       }
   

@@ -123,6 +123,10 @@ function main(){
         document.getElementById("cnf").style.visibility="visible";
     }
 
+    function registrationClosed(disp){
+        document.getElementById("regClosed").style.display = disp ; 
+    }
+
     function showMember(number, eName){
         for(var i=1; i<=number; i++){
             document.getElementById("m"+i).style.display="inline";
@@ -144,6 +148,7 @@ function main(){
         numberOfPar = number;
         document.getElementById("team").readOnly = false;
         document.getElementById("team").value = "";
+        registrationClosed("none");
     }
 var glub=0;
 function sub(){
@@ -196,6 +201,10 @@ function sub(){
     else if( a=="Tremor" || a=="Nrutya" ){
         showMember(7,a);
         addbutton.style.display="inline";
+    }else if(a=="N.A."){ 
+        showMember(0,a);
+        addbutton.style.display="none";
+        registrationClosed("inline");
     }
     document.getElementById("add").style.visibility="hidden";
     document.getElementById("cnf").style.visibility="visible";
