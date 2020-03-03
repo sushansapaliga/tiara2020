@@ -41,7 +41,7 @@
 <body>
 	<div id="loading-spinner">
 		<div class="limiter">
-			<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+			<div class="container-login100" style="background-image: linear-gradient(90deg,#05d2fb,#e713fd);">
 				<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 					<div class="lds-facebook"><div></div><div></div><div></div></div>
 				</div>
@@ -51,7 +51,7 @@
 	
 	<div id="main-content">
 	<div class="limiter">
-		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+		<div class="container-login100" style="background-image: linear-gradient(90deg,#05d2fb,#e713fd);">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 			 
                     <div style="text-align: center">
@@ -91,14 +91,13 @@
 					</div>
 
 					<div class="flex-c-m">
-					 
-
-						<a href="#" class="login100-social-item bg2">
-							<i class="fa fa-internet-explorer"></i>
-						</a>
 
 						<a onclick="disp(0)" href="#" class="login100-social-item bg3">
 							<i  class="fa fa-question"></i>
+						</a>
+						
+						<a onclick="disp(1)" href="#" class="login100-social-item bg2">
+							<i class="fa fa-comment"></i>
 						</a>
 					</div>
  
@@ -121,11 +120,7 @@
  
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
-	  <ol class="carousel-indicators">
-		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		<li data-target="#myCarousel" data-slide-to="1"></li>
-		<li data-target="#myCarousel" data-slide-to="2"></li>
-	  </ol>
+	  
   
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner">
@@ -191,12 +186,34 @@
 	</div>
   </div>
   
-				   <button  id="hi"  class="close1" >CLOSE</button>
+				   <button  id="hi"  class="close1" style="margin-top: 2%;" >CLOSE</button>
 				   <br><br>
 			   </div>
 		</div>
 		</div>
 </div>
+
+<div  class="modal" >
+	<!-- Modal content -->
+	  <div class="modal-content">
+		  
+		   <div class="row"><br> 
+			   <div class="col-sm-12"><br>
+		<h2>Get in touch</h2><br><br>
+		<div class="row">
+			
+			<div class="col-md-3"><img src="images/k.png"></div>
+			<div class="col-md-3"><p id="p" style="margin-top: 12%;">Gowda Karthik Balgopal</p><p id="p">karthikg188@gmail.com</p></div>
+			<div class="col-md-3"><img id="su" src="images/s.png"></div>
+			<div class="col-md-3"><p id="p" style="margin-top: 12%;">Sushan Suresh Sapaliga</p><p id="p">sushansapaliga@gmail.com</p></div>
+			
+		
+		</div>
+		<button  id="hi"  class="close1 su" style="float: right; " >CLOSE</button>
+		</div>
+		</div>
+		</div>
+	</div></div>
 <!--===============================================================================================-->
 <script>
 	var modal = document.getElementsByClassName("modal");
@@ -224,6 +241,20 @@
 	  margin-left: -5%;
 	  width: 90%;
   }
+  #su{
+	  margin-top: 10%;
+  }
+  #hi{
+	  margin-top: 15%;
+  }
+  img{
+	  width: 70%;
+	  margin-left: 15%;
+  }
+  #p{
+	  margin-top: -5%;
+  }
+  
   
 }
  .slide{
@@ -237,7 +268,7 @@
 display: none; /* Hidden by default */
 position: fixed; /* Stay in place */
 z-index: 10; /* Sit on top */
-padding-top: 100px; /* Location of the box */
+padding-top: 40px; /* Location of the box */
 left: 0;
 top: 0;
 width: 100%; /* Full width */
@@ -296,7 +327,6 @@ cursor: pointer;
 		 background-color: #c82df7;
 		 border: solid 0px white;
 		 box-shadow: 0px 0px 15px #c82df7;
-		 margin-top: 2%;
 	 }
 </style>
 <!--------------------------------------------------------------------------------------------------->

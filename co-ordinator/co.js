@@ -8,7 +8,7 @@ console.log(event);
     else{
         
     
-    var d = "<table id='example'><thead><th>Team Name</th><th>Player Name</th><th>Phone</th><th>College</th</thead>";
+    var d = "<table id='example'><thead><th>Team Name</th><th>Player Name</th><th>Phone</th><th>College</th></thead>";
     var count = 0;
     db.collection('event').where('event_name','==',event).get().then((snapshot) =>{
         snapshot.docs.forEach(doc =>{  

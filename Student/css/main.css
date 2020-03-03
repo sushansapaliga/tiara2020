@@ -131,8 +131,7 @@ td{
     display: inline;
     margin-top: 50px;
     font-weight: 500;
-    
-    box-shadow: 5px 10px #000 ;
+    box-shadow: 0px 0px 10px #000 ;
     margin-left: 40px;
 }
  
@@ -310,13 +309,13 @@ iframe {
 .wrap-input100 {
   width: 100%;
   position: relative;
-  border-bottom: 2px solid #d9d9d9;
+  border-bottom: 2px solid #fff;
 }
 
 .label-input100 {
   font-family: Poppins-Regular;
   font-size: 14px;
-  color: #333333;
+  color: #000;
   line-height: 1.5;
   padding-left: 7px;
 }
@@ -324,7 +323,7 @@ iframe {
 .input100 {
   font-family: Poppins-Medium;
   font-size: 16px;
-  color: #333333;
+  color: #000;
   line-height: 1.2;
 
   display: block;
@@ -375,7 +374,7 @@ iframe {
   left: 0;
   width: 0;
   height: 2px;
-  background: #7f7f7f;
+  background: #ff4528;
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -392,11 +391,11 @@ iframe {
 }
 
 .input100:focus + .focus-input100::after {
-  color: #a64bf4;
+  color: #ff4528;
 }
 
 .has-val.input100 + .focus-input100::after {
-  color: #a64bf4;
+  color: #FF4528;
 }
 
 
@@ -554,7 +553,7 @@ iframe {
         line-height: 40px;
     }
     .adt{
-        margin-right: 18%;
+        margin-right: 13%;
     }
      .adc{
         margin-right: 19%;
