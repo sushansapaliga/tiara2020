@@ -4,8 +4,11 @@
         <h2 style="font-family: american_kestrel_condensedCn;font-size: 40px;color:#0095FF ">Tiara College Registrations</h2> 
         <input type="email" placeholder="Enter Email" id="email"><br>
         <input type="password" placeholder="Enter Password" id="pass"><br>
-        <input type="text" placeholder="Enter College" id="col"><br>
+        <input type="text" placeholder="Enter College Names" id="col"><br>
+        <input type="text" placeholder="Enter College Code" id="colc"><br>
         <button type="submit" onclick="signup()"   >CLICK TO ADD USER</button>
+        <button type="submit" onclick="col()"   >ADD COLLEGE</button>
+        
          
     </div>
 </center>
@@ -25,7 +28,7 @@
     
     button{
         padding: 20px 20px 20px 20px ;
-        width: 30%;
+        width: 15%;
         background-color: #0095FF;
         border: solid 0px;
         color: white;
@@ -40,10 +43,16 @@
     }
 </style>
  
+ <script>
+     function move(){
+         location.replace("index.html");
+     }
+</script>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-database.js"></script>
-
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
 <script src="reg.js"></script>
  

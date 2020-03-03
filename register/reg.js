@@ -1,13 +1,13 @@
  
- var firebaseConfig = {
-    apiKey: "AIzaSyA-MnNAZw6VVXQ8EjgeZmsNfGxKU5L7m4g",
-    authDomain: "tiara-ec4f6.firebaseapp.com",
-    databaseURL: "https://tiara-ec4f6.firebaseio.com",
-    projectId: "tiara-ec4f6",
-    storageBucket: "tiara-ec4f6.appspot.com",
-    messagingSenderId: "149576170774",
-    appId: "1:149576170774:web:75721e56f481ec72202437",
-    measurementId: "G-MMSJBV2NSX"
+  var firebaseConfig = {
+    apiKey: "AIzaSyDJ5N734amKIPxuIqBfvW9c1_Y4OQ9gwjQ",
+    authDomain: "tiarareg-9672a.firebaseapp.com",
+    databaseURL: "https://tiarareg-9672a.firebaseio.com",
+    projectId: "tiarareg-9672a",
+    storageBucket: "tiarareg-9672a.appspot.com",
+    messagingSenderId: "617156753642",
+    appId: "1:617156753642:web:3ff00b1ef1ee170b677f93",
+    measurementId: "G-F91FECFKPK"
   };
  
   firebase.initializeApp(firebaseConfig);
@@ -23,21 +23,48 @@ function signup(){
  
   var errorCode = error.code;
   var errorMessage = error.message;
- 
-      const ref = firebase.database().ref("users");
-    var data = {
-        email:email,
-        password:password,
-        college:college
-    }
-    ref.push(data);
-    alert(email +" for "+college+" Added successfully");
+alert("teacher added successfully")
+      
 });
 }
 
-function logout(){
-     
-    
-    
-}
+var db = firebase.firestore();
 
+function col(){
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("pass").value;
+    var college = document.getElementById("col").value;
+    var code = document.getElementById("colc").value; 
+    var a = 0;
+    
+      firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+console.log("login: " );
+    window.alert("Error : " + errorMessage);
+             
+  });
+    if (firebase.auth().currentUser !== null) 
+        var uid = firebase.auth().currentUser.uid;
+    console.log(uid);
+    console.log(college);
+    console.log(code);
+    console.log(a);
+    
+    db.collection("college").doc().set({
+        amount:a,
+        college_code:code,
+        college_id:uid,
+        college_name:college
+         
+})
+    .then(function() {
+    console.log("Document successfully written!");
+        alert("college added successfully")
+})
+.catch(function(error) {
+    console.error("Error writing document: ", error);
+});
+}
+ 
