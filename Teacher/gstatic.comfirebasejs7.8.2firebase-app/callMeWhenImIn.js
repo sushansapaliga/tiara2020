@@ -60,7 +60,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   function setCollegeName(){
       document.getElementById("college").value = collegeName;
       document.getElementById("title_college").innerHTML = collegeName;
-      document.getElementById("amount").innerHTML = "AMOUNT TO BE PAID: ₹" + collegeAmount ; 
+      document.getElementById("amount").innerHTML = "AMOUNT TO BE PAID: Rs." + collegeAmount ; 
   }
 
   function addStudent(){

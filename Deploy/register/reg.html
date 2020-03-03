@@ -1,0 +1,58 @@
+  <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
+ <center>
+    <div class="main">
+        <h2 style="font-family: american_kestrel_condensedCn;font-size: 40px;color:#0095FF ">Tiara College Registrations</h2> 
+        <input type="email" placeholder="Enter Email" id="email"><br>
+        <input type="text" placeholder="Enter Password" id="pass"><br>
+        <input type="text" placeholder="Enter College Names" id="col"><br>
+        <input type="text" placeholder="Enter College Code" id="colc"><br>
+        <button type="submit" onclick="signup()"   >CLICK TO ADD USER</button>
+     
+        
+         
+    </div>
+</center>
+
+<style>
+    .main{
+        margin-top: 10%;
+    }
+    input{
+        padding: 20px 20px 20px 20px ;
+        width: 30%;
+        margin-bottom: 2%;
+         border: solid 1px black;
+        font-size: 16px;
+         border-radius: 5px;
+    }
+    
+    button{
+        padding: 20px 20px 20px 20px ;
+        width: 15%;
+        background-color: #0095FF;
+        border: solid 0px;
+        color: white;
+        font-weight: 700;
+        font-size: 18px;
+        border-radius: 5px;
+    }
+    button:hover{
+        background-color: white;
+        border: solid 1px #0095FF;
+        color: #0095FF;
+    }
+</style>
+ 
+ <script>
+     function move(){
+         location.replace("index.html");
+     }
+</script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+<script src="reg.js"></script>
+ 
