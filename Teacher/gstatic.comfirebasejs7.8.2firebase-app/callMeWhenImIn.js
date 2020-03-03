@@ -204,7 +204,7 @@ function sendMail(name, email, sid){
         anHttpRequest.send( null ); 
         }
     }
-    var theurl='https://script.google.com/macros/s/AKfycbwfnGJB0vq77wxLmAuzBkHx-LzaJXh255w2pPGfFfW1-hM2VC1u/exec?name=' + name +"&email=" +email+ "&student_sid="+sid;
+    var theurl='https://script.google.com/macros/s/AKfycbzlREPI2t2Zt6CODRUxuj0QYz0gLnBEbi1y4ASzI1NDvAh-ucg/exec?name=' + name +"&email=" +email+ "&student_sid="+sid;
     var client = new HttpClient();
     client.get(theurl, function(response) { 
         var response1 = JSON.parse(response);
