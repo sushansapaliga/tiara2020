@@ -20,7 +20,11 @@ function signup(){
     var password = document.getElementById("pass").value;
     var college = document.getElementById("col").value;
      
-  firebase.auth().createUserWithEmailAndPassword(email, password ).catch(function(error) {
+  firebase.auth().createUserWithEmailAndPassword(email, password )
+  .then((data="0")=>{
+    col();
+  })
+  .catch(function(error) {
  
   var errorCode = error.code;
   var errorMessage = error.message;
