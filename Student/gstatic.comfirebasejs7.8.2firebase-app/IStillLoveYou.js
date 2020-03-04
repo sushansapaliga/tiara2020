@@ -35,11 +35,13 @@ function showIt(){
 function eventCheck(){
     loadIt();
     if (document.getElementById("main").selectedIndex=="0"){
-        confirm("Select Event Type");
+        //confirm("Select Event Type");
+        disp(0,"Select Event Type");
         showIt();
         return;
     }else if (document.getElementById("sub").selectedIndex=="0"){
-        confirm("Select an Event");
+        //confirm("Select an Event");
+        disp(0,"Select an Event");
         showIt();
         return;
     }else{
@@ -65,7 +67,13 @@ function eventCheck(){
 function show(){
     loadIt();
     if (document.getElementById("team").value.trim() == "" ){
-        confirm("Enter Team Name");
+        //confirm("Enter Team Name");
+        disp(0,"Enter Team Name.");
+        showIt();
+        return;
+    }
+    else if(document.getElementById("team").value.trim().length > 25){
+        disp(0,"Team name is very long.");
         showIt();
         return;
     }
@@ -80,7 +88,8 @@ function show(){
             if(!collectSID.includes(lcsid)){
                 collectSID.push(document.getElementById("sid"+i).value.trim());
             }else{
-                confirm(lcsid+" sid already exists");
+                //confirm(lcsid+" SID already exists");
+                disp(0,lcsid+" SID already exists");
                 showIt();
                 return;
             }
@@ -115,15 +124,18 @@ function show(){
                     checkLoveIsProper(nameArr, sidArr, phoneArr, emailArr);
                 }).catch((error)=>{
                     showIt();
-                    confirm("Error:"+ error);
+                    //confirm("Error:"+ error);
+                    disp(0,"Error:"+ error);
                 });
             }else{
-                confirm(collectSID[0] + " is invalid or has not registered");
+                //confirm(collectSID[0] + " is invalid or has not registered");
+                disp(0,collectSID[0] + " is invalid or has not registered");
                 showIt();
             }
         }).catch((error)=>{
             showIt();
-            confirm("Error:"+ error);
+            //confirm("Error:"+ error);
+            disp(0,"Error:"+ error);
         });
     }
 }
@@ -135,7 +147,8 @@ function checkLoveIsProper(nameArr, sidArr, phoneArr, emailArr){
     for(var i=0; i<collectSID.length ; i++){
         var res = sidArr.indexOf(collectSID[i]);
         if( res == -1){
-            confirm(collectSID[i] + " is invalid or has not registered");
+            //confirm(collectSID[i] + " is invalid or has not registered");
+            disp(0,collectSID[i] + " is invalid or has not registered");
             return;
         }else{
             parPhone.push(phoneArr[res]);
@@ -157,12 +170,14 @@ function displayDetail(){
     document.getElementById("team").readOnly= true;
     document.getElementById("add").style.visibility="visible";
     document.getElementById("cnf").style.visibility="hidden";
+    document.getElementById("cnf1").style.visibility="hidden";
     showIt();
 }
 
 function addStudent(){
     loadIt();
-    var k = confirm("Team details cannot be changed later.");
+    //var k = confirm("Team details cannot be changed later.");
+    var k= true;
 
     if(k==true){
         checkParExist();
@@ -190,7 +205,8 @@ function checkParExist(){
 
         for(var i =0; i< collectSID.length; i++){
             if(allPar.includes(collectSID[i])){
-                confirm(collectSID[i] + " has already registered for this event.");
+                //confirm(collectSID[i] + " has already registered for this event.");
+                disp(0,collectSID[i] + " has already registered for this event.");
                 showIt();
                 return;
             }
@@ -224,11 +240,13 @@ function addTeam(){
         team_name: teamName 
     }).then((data="0")=>{
         addToRealDataBase();
-        confirm("Successfully added team");
-        window.location = "Event.html";
+        //confirm("Successfully added team");
+        disp(1,"Successfully added team");
+        //window.location = "Event.html";
     }).catch((error)=>{
         showIt();
-        confirm("Error:"+ error);
+        //confirm("Error:"+ error);
+        disp(0,"Error:"+ error)
     });
 }
 
@@ -262,10 +280,12 @@ function checkStudentSIDIsValid(){
     for(var i=1; i<=numberOfPar ; i++){
         var studSid = document.getElementById("sid"+i).value.trim() ;
         if( studSid == "" ){
-            confirm("Enter SID of member "+i);
+            //confirm("Enter SID of member "+i);
+            disp(0,"Enter SID of member "+i)
             return true;
         }else if( studSid.split("-")[0].localeCompare(collCode) != 0 && i != 1 ){
-            confirm("Member's are not from same college");
+            //confirm("Members are not from same college");
+            disp(0,"Members are not from same college")
             return true;
         }else if(i==1){
             collCode =  studSid.split("-")[0];

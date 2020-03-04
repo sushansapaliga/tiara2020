@@ -43,7 +43,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 collegeDocId = doc.id;
             });
             if(collegeName == ""){
-              window.location="index.html";
+              window.location="login.html";
             }else{
             setCollegeName();
             showIt();
@@ -53,7 +53,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       }
   
     } else {
-        window.location="index.html";
+        window.location="login.html";
     }
   });
 

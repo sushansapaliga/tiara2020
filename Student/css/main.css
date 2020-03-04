@@ -553,12 +553,12 @@ iframe {
         line-height: 40px;
     }
     .adt{
-        margin-right: 13%;
+        margin-right: 19%;
     }
      .adc{
-        margin-right: 19%;
+        margin-right: -14%;
         margin-bottom: 10%;
-         margin-top: 10%;
+         //margin-top: 10%;
     }
     .srbtn {
         display: none;
@@ -598,12 +598,17 @@ iframe {
     }
     .adt{
         margin-top: -25%;
+        margin-right: 17%;
     }
 } 
 @media (max-width: 400px) {
   .adc{
     
-    margin-right: 16%;
+    margin-right: 17%;
+}
+.adt{
+  margin-right: 15%;
+  margin-bottom: 10%;
 }
 .back{
   font-size: 16px;
@@ -612,6 +617,10 @@ iframe {
 @media (max-width: 320px) {
   .adc{
     margin-right: 12%;
+}
+.adt{
+  margin-right: 8%;
+  margin-bottom: 15%;
 }
 .ref{
   margin-right: 29%;

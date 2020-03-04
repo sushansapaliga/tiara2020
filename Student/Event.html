@@ -419,7 +419,7 @@
 
                         </div> 
                     </div>
-                    <!--------------------------------------team details------------------------------------------------>
+                    <!--------------------------------------Registrations Closed------------------------------------------------>
                     <br>
                     <div class="row">
                     <div class="col-md-12">
@@ -440,7 +440,7 @@
                     <button class="adt" id="add">ADD TEAM</button>
                     </div>
                      <div class="col-md-4">
-                     <button class="ref" onclick="location.replace('Event.html');"  style="background-image: linear-gradient(45deg,#ff4528,#ff4528)">RESET</button>
+                     <button class="ref" onclick="location.replace('event.html')"  style="background-image: linear-gradient(45deg,#ff4528,#ff4528)">RESET</button>
                     </div>
                 </div></centre>
 		 	
@@ -453,6 +453,38 @@
                 </div></div>
             <!-------------------------------------section end-------------------------------------------->
         </div></div>
+    </div>
+    <div  class="modal" >
+        <!-- Modal content -->
+          <div class="modal-content">
+       
+               <div class="row"><br> 
+                   <div class="col-sm-12"><br>
+            <h4>ATTENTION !!!</h4><br>
+        
+            <p style="text-align: justify; " id="message">Testing Modal</p><br>
+                       
+                       <button id="hi" class="close1">OK</button>
+                       <br><br>
+                   </div>
+            </div>
+            </div>
+    </div>
+    <div  class="modal" >
+        <!-- Modal content -->
+          <div class="modal-content">
+       
+               <div class="row"><br> 
+                   <div class="col-sm-12"><br>
+            <h4>ATTENTION !!!</h4><br>
+        
+            <p style="text-align: justify; ">Successfully added team</p><br>
+                       
+                       <button id="hi" onclick="location.replace('event.html')">OK</button>
+                       <br><br>
+                   </div>
+            </div>
+            </div>
     </div>
 </body>
     <style>
@@ -471,14 +503,14 @@
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyA-MnNAZw6VVXQ8EjgeZmsNfGxKU5L7m4g",
-    authDomain: "tiara-ec4f6.firebaseapp.com",
-    databaseURL: "https://tiara-ec4f6.firebaseio.com",
-    projectId: "tiara-ec4f6",
-    storageBucket: "tiara-ec4f6.appspot.com",
-    messagingSenderId: "149576170774",
-    appId: "1:149576170774:web:75721e56f481ec72202437",
-    measurementId: "G-MMSJBV2NSX"
+    apiKey: "AIzaSyDJ5N734amKIPxuIqBfvW9c1_Y4OQ9gwjQ",
+    authDomain: "tiarareg-9672a.firebaseapp.com",
+    databaseURL: "https://tiarareg-9672a.firebaseio.com",
+    projectId: "tiarareg-9672a",
+    storageBucket: "tiarareg-9672a.appspot.com",
+    messagingSenderId: "617156753642",
+    appId: "1:617156753642:web:3ff00b1ef1ee170b677f93",
+    measurementId: "G-F91FECFKPK"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
@@ -487,4 +519,79 @@
 
 <script  src="gstatic.comfirebasejs7.8.2firebase-app/student.js"></script>
 <script  src="gstatic.comfirebasejs7.8.2firebase-app/IStillLoveYou.js"></script>
+
+<script>
+    var modal = document.getElementsByClassName("modal");
+    var b= document.getElementsByClassName("close1");
+
+    for(var i=0;i<b.length;i++){
+    b[i].onclick = function(){
+    for(var j=0;j<modal.length;j++){
+    modal[j].style.display = "none";
+            }
+        }
+    }
+
+    function disp(loc,mess){
+        document.getElementById("message").innerHTML = mess;
+        modal[loc].style.display = "block";
+    }
+</script>
+<style>
+    .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: white; /* Fallback color */
+  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #000;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+    border: #e62b1e;
+    border-style: solid;
+    border-width: 2px;
+}
+
+/* The Close Button */
+.close1 {
+  color: white;
+  float: right;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.close1:hover,
+.close1:focus {
+  color: #e62b1e;
+  text-decoration: none;
+  cursor: pointer;
+}
+             h4{
+                 color: #ff4528;
+                 text-transform: uppercase;
+             }
+             p{
+                 color: white;
+             }
+             #hi{
+                 padding: 5px 20px 5px 20px  ;
+                 font-weight: 600;
+                 color: white;
+                 background-color: #ff4528;
+                 border: solid 0px white;
+                 border-radius: 2px;
+              }
+    </style>
 </html>
