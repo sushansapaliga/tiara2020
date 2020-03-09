@@ -74,23 +74,21 @@
                         <span class="label-input100"><b>College Name</b></span>
                         <div  class="input100 drop">
                             <datalist  id="collegeList" >
-                                <option id="o1">Grandmaster</option>
-                                <option id="o2">Ease of Flow</option>
-                                <option id="o3">Design O'Web</option>
+                                <option id="o1">Example</option>
                             </datalist>
-                            <input style="margin-top: 20px;" placeholder="Search your College" class="box " id="event"  autoComplete="on" list="collegeList"/> 
+                            <input style="margin-top: 20px;" placeholder="Search your College" class="box " id="college"  autoComplete="on" list="collegeList"/> 
                         </div>
 						<span class="focus-input100" data-symbol="&#x2616;"></span>
 					</div>
                 <div style="margin-top: 30px;">
-                    <input type="checkbox" style=" width: 20px ;height: 20px" id="checked" onclick="mega()" ><span style="padding-left:10px;color: black;"><b>I Agree to<a style="padding-left:10px;font-size: 16px; color: red;cursor:pointer" onclick="disp(0)" >Terms and Condition</a></b></span>
+                    <input type="checkbox" style=" width: 20px ;height: 20px" id="checked" onclick="mega()" ><span style="padding-left:10px;color: black;"><b>I Agree to<a style="padding-left:10px;font-size: 16px; color: red;cursor:pointer" onclick="disp(0,'hola')" >Terms and Condition</a></b></span>
                     </div>
 					
 					<div class="text-right p-t-31 p-b-31">
 						  <span class="login100-form-title " style="padding:5px 5px 5px 5px ;font-size: 16px;font-family: Poppins-Medium; background-color: yellow;color: black" id="showM">Don't forget your college ID card on the day of event.</span>
 					</div>
 					
-					 <button style="width: 100%;background-color: #ff4528;padding: 10px 0px 10px 0px;border-radius: 50px;color: white;font-weight: 500;">REGISTER STUDENT</button>
+					 <button style="width: 100%;background-color: #ff4528;padding: 10px 0px 10px 0px;border-radius: 50px;color: white;font-weight: 500;" id="regStudent">REGISTER STUDENT</button>
                  <br><br>
                  <div style="margin-left: 30%;">
                  <button style="width: 50%;background-color: #ff4528;padding: 10px 10px 10px 10px;border-radius: 50px;color: white;font-weight: 500;" onclick="location.replace('index.html')">GO BACK</button>
@@ -137,7 +135,7 @@
                                
                                        <div class="row"><br> 
                                            <div class="col-sm-12"><br>
-                                    <h4>ATTENTION !!!</h4><br>
+                                    <h4>Attention !</h4><br>
                                 
                                     <p style="text-align: justify; " id="message">Testing Modal</p><br>
                                                
@@ -153,9 +151,9 @@
                                
                                        <div class="row"><br> 
                                            <div class="col-sm-12"><br>
-                                    <h4>ATTENTION !!!</h4><br>
+                                    <h4>Attention !</h4><br>
                                 
-                                    <p style="text-align: justify; ">Student Registered Successfully. Check your E - Mail for <a style="color: #ff4528;">SID</a></p><br>
+                                    <p style="text-align: justify; ">You have successfully registered for TIARA 2K20. Check your email for <a style="color: #ff4528;">SID</a></p><br>
                                                
                                                <button id="hi" onclick="location.replace('index.html')">OK</button>
                                                <br><br>
@@ -233,10 +231,6 @@
             function disp(loc,mess){
                 document.getElementById("message").innerHTML = mess;
                 modal[loc].style.display = "block";
-            }
-
-            function disp(loc){
-            modal[loc].style.display = "block";
             }
             </script>
               <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
