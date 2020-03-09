@@ -1,3 +1,4 @@
+
 var collegeId = "";
 var collegeDocId = "";
 var collegeName = "";
@@ -19,7 +20,7 @@ function showIt(){
 const db = firebase.firestore();
 
 document.getElementById("logout_btn").addEventListener("click",logout);
-document.getElementById("addStudent").addEventListener("click",addStudent);
+//document.getElementById("addStudent").addEventListener("click",addStudent);
 
 $(document).keydown(function(e){
   if(e.which === 123){
@@ -62,7 +63,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       document.getElementById("title_college").innerHTML = collegeName;
       document.getElementById("amount").innerHTML = "AMOUNT TO BE PAID: Rs." + collegeAmount ; 
   }
-
+/*
   function addStudent(){
     loadIt();
       var email = document.getElementById("email").value.trim()  ;
@@ -159,7 +160,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementById("conf_email").value = "";
     document.getElementById("checked").checked = false ;
   }
-
+*/
   function getStudent(){
     loadIt();
       var table = "<table id='example'><thead><tr><th>NAME</th><th>E - MAIL</th><th>PHONE</th></tr></thead><tbody id='table'>";
@@ -178,7 +179,7 @@ firebase.auth().onAuthStateChanged(function(user) {
           showIt();
       });
   }
-
+/*
 function gsid(length, chars) {
     var result = '';
     for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
@@ -220,7 +221,7 @@ function sendMail(name, email, sid){
         return false;
     }
 }
-
+*/
 
 
 function logout(){
