@@ -130,6 +130,40 @@
                                     </div>
                                     </div>
                             </div>
+                            <!---------------------------------modal--------------------------->
+                            <div  class="modal" >
+                                <!-- Modal content -->
+                                  <div class="modal-content">
+                               
+                                       <div class="row"><br> 
+                                           <div class="col-sm-12"><br>
+                                    <h4>ATTENTION !!!</h4><br>
+                                
+                                    <p style="text-align: justify; " id="message">Testing Modal</p><br>
+                                               
+                                               <button id="hi" class="close1">OK</button>
+                                               <br><br>
+                                           </div>
+                                    </div>
+                                    </div>
+                            </div>
+                            <div  class="modal" >
+                                <!-- Modal content -->
+                                  <div class="modal-content">
+                               
+                                       <div class="row"><br> 
+                                           <div class="col-sm-12"><br>
+                                    <h4>ATTENTION !!!</h4><br>
+                                
+                                    <p style="text-align: justify; ">Student Registered Successfully. Check your E - Mail for <a style="color: #ff4528;">SID</a></p><br>
+                                               
+                                               <button id="hi" onclick="location.replace('index.html')">OK</button>
+                                               <br><br>
+                                           </div>
+                                    </div>
+                                    </div>
+                            </div>
+                            <!------------------------------------------------------------------->
 <style>
     #showM{
         display: none;
@@ -184,8 +218,8 @@
                 document.getElementById('showM').style.display = 'block';
             }
                 
-                 var modal = document.getElementsByClassName("modal");
-
+           /*MODAL FUNCTION*/
+            var modal = document.getElementsByClassName("modal");
             var b= document.getElementsByClassName("close1");
 
             for(var i=0;i<b.length;i++){
@@ -194,6 +228,11 @@
             modal[j].style.display = "none";
                     }
                 }
+            }
+
+            function disp(loc,mess){
+                document.getElementById("message").innerHTML = mess;
+                modal[loc].style.display = "block";
             }
 
             function disp(loc){
