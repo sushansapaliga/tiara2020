@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiara 2020</title>
+    <link rel="icon" type="image/png" href="images/icons/logo.jpg"/>
+  <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="fonts/stylesheet.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="particles"></div>
+<div class="background"></div>
+<div class="title">
+   
+  <h1>Tiara 2020</h1><br>
+    <span id="a1">Tiara</span><span id="a2">2020</span>
+    <button  onclick="disp(0)" id="adc" >Click to Proceed</button><br><br><br>
+    <button onclick="location.replace('RegSelf.html')" id="hi" >REGISTER NOW</button>
+    </div>
+<svg>
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="12" />
+      <feColorMatrix in="blur" result="colormatrix" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -9" />
+      <feBlend in="SourceGraphic" in2="colormatrix" />
+    </filter>
+  </defs>
+</svg>
+ 
+    
+      <div  class="modal" >
+                                <!-- Modal content -->
+                                  <div class="modal-content">
+                                      <span class="close1">&times;</span>
+                                       <div class="row"><br> 
+                                           <div class="col-sm-12"><br>
+                                    <h4>how to register</h4><br>
+                                
+                                    <p style="text-align: justify; " >* You need a valid SID (Student Identification) to register for events.</p><br>
+                                               <p style="text-align: justify;">* SID can be obtained over email once the student registers.</p>
+                                               <br>
+                                               <button onclick="location.replace('Event.html')" id="hi" >I UNDERSTAND</button>
+                                               <br><br>
+                                              
+                                           </div>
+                                    </div>
+                                    </div>
+                            </div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+    <script>
+    function tiara(){
+        location.replace("Event.html");
+    }
+    </script>
+    
+         <script>
+            var modal = document.getElementsByClassName("modal");
+
+            var b= document.getElementsByClassName("close1");
+
+            for(var i=0;i<b.length;i++){
+            b[i].onclick = function(){
+            for(var j=0;j<modal.length;j++){
+            modal[j].style.display = "none";
+                    }
+                }
+            }
+
+            function disp(loc){
+            modal[loc].style.display = "block";
+            }
+        </script>
+         <style>
+    .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: white; /* Fallback color */
+  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #000;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+    border: #e62b1e;
+    border-style: solid;
+    border-width: 2px;
+}
+
+/* The Close Button */
+.close1 {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close1:hover,
+.close1:focus {
+  color: #e62b1e;
+  text-decoration: none;
+  cursor: pointer;
+}
+             h4{
+                 color: #ff4528;
+                 text-transform: uppercase;
+             }
+             p{
+                 color: white;
+             }
+             #hi{
+                 padding: 13px 30px 10px 30px ;
+                 font-weight: 600;
+                 color: white;
+                 background-color: #ff4528;
+                 border: solid 0px white;
+                 border-radius: 2px;
+                 box-shadow: 0px 0px 10px #FF0059;
+              }
+    </style>
+    
+</html>
