@@ -36,6 +36,7 @@ function onLoad(){
     var collegeList = "";
     var i=0;
     db.collection("college")
+    .orderBy("college_name")
     .get().then((snapShot)=>{
         snapShot.docs.forEach(doc=>{
             collegeList = collegeList + "<option id='o"+ i +"'>"+ doc.data()["college_name"] +"</option>";
@@ -60,7 +61,7 @@ function validateStudent(){
     var contact = document.getElementById("contact").value.trim() ;
     var conf_email = document.getElementById("conf_email").value.trim() ;
     var check = document.getElementById("checked").checked;
-    var college = document.getElementById("college").value.trim();
+    var college = document.getElementById("collegeList").value.trim();
 
     var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
     if(name == ""){
@@ -132,7 +133,7 @@ function checkStudent(){
         if(i==0){
             findValidSID();
         }else{
-            disp(1,"Your have already registered for the TIARA 2K20.");
+            disp(1,"You have already registered for the TIARA 2K20.");
             showIt();
         }
     });
@@ -142,7 +143,7 @@ function registerStudent(){
     var email = document.getElementById("email").value.trim();
     var name = document.getElementById("name").value.trim();
     var contact = document.getElementById("contact").value.trim();
-    var college = document.getElementById("college").value.trim();
+    var college = document.getElementById("collegeList").value.trim();
 
     db.collection("student")
     .add({
