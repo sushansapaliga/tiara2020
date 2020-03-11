@@ -1,13 +1,3 @@
-
-/*var collegeId = "";
-var collegeDocId = "";
-var collegeName = "";
-var collegeCode = "";
-var collegeAmount = "";
-
-loadIt();
-*/
-
 function loadIt(){
     document.getElementById("loading-spinner").style.display = "block";
     document.getElementById("main-content").style.display = "none";
@@ -32,18 +22,19 @@ $(document).keydown(function(e){
 
   function getStudent(){
     //loadIt();
-      var table = "<table id='example'><thead><tr><th>SID</th><th>Name</th><th>College</th><th>Phone</th><th>E - Mail</th><th>Attendance</th></tr></thead><tbody id='table'>";
+      var table = "<table id='example'><thead><tr><th>SID</th><th>Name</th><th>College</th><th>Phone</th><th>Attendance</th></tr></thead><tbody id='table'>";
       var count = 0 ; 
       db.collection("Attendance")
+      .orderBy("college_name")
       .get().then((snapshot)=>{
           snapshot.docs.forEach(doc=>{
               count++;
-            table += "<tr><td>"+ doc.data()["sid"] + "</td><td>"+ doc.data()["name"] + "</td><td>" + doc.data()["college_name"] + "</td><td>" + doc.data()["contact"] + "</td><td>"+ doc.data()["email"] + "</td><td>"+ doc.data()["attendance"] + "</td></tr>";
+            table += "<tr><td>"+ doc.data()["sid"] + "</td><td>"+ doc.data()["name"] + "</td><td>" + doc.data()["college_name"] + "</td><td>" + doc.data()["contact"] + "</td><td>"+ doc.data()["attendance"] + "</td></tr>";
           })
           table += "</tbody></table>";
           document.getElementById("tableHere").innerHTML = table;
           collegeAmount = count *200 ; 
-         
+         document.getElementById("amount").innerHTML = "Amount Received : Rs. "+collegeAmount+".";
       });
   }
 
