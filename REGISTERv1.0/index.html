@@ -50,7 +50,7 @@
 <!-------------------------------------section-------------------------------------------->
        
             <div class="col-md-12">
-                    <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54 topmob">
+                    <div class="wrap-login100 p-l-55 p-r-55 p-t-45 p-b-54 topmob">
              
                  
                         <centre><div class="row">
@@ -68,23 +68,23 @@
                 </div>
                            </div>
                            <div class="col-md-4">
-                               <button onclick="myStudent()" class="pdfbtn" style="width: 100%;padding-top: 20px;border-radius: 5px; padding-bottom: 20px;">Search Student</button>
+                               <button onclick="myStudent()" class="pdfbtn" style="width: 90%;padding-top: 19px;border-radius: 5px; padding-bottom: 19px;">Search Student</button>
                            </div>
                        <div class="col-md-4">
                         <button style="float: right;border-radius: 5px;background-color: red;" class ="pdfbtn" id="pdf" ><img src="images/print.png" style="padding-right: 20px;" > Get PDF</button>
                        </div>
                         
                        </div> 
-                       <br><br>
+                       <br>
 
                        <!----------------------Table Section--------------------------------->
                        <table>
-                           <tr><th>SID</th><th>Name</th><th>College</th><th>Phone</th><th>E - Mail</th><th>Attendance</th><th rowspan="2" style="background-color: white;"><button onclick="addStudent()" id="sv" >SAVE</button></th></tr>
-                           <tr><td><label id="sid_student"></label></td><td><label id="name_student"></label></td><td><label id="college_student"></label></td><td><label id="phone_student"></label></td><td><label id="email_student"></label></td><td><select id="attendance_student"><option disabled selected>Choose here</option><option>EVENTS Only</option><option>CONCERT Only</option><option>EVENT/CONCERT</option></select></td></tr>
+                           <tr><th>SID</th><th>Name</th><th>College</th><th>Phone</th><!--<th>E - Mail</th>---><th>Attendance</th><th rowspan="2" style="background-color: white;padding-right: 0px;" ><button onclick="addStudent()" id="sv" style="float: right;" >SAVE</button></th></tr>
+                           <tr style="font-weight: 600;color: black;"><td style="padding-top: 30px;padding-bottom: 30px;"><label id="sid_student"></label></td><td><label id="name_student"></label></td><td><label id="college_student"></label></td><td><label id="phone_student"></label></td><!---<td><label id="email_student"></label></td>--><td><select id="attendance_student"><option disabled selected>Choose here</option><option>EVENTS Only</option><option>CONCERT Only</option><option>EVENT/CONCERT</option></select></td></tr>
                        </table>
-                       <br><br>   
+                       <br><hr style="border: 2px solid red;">  <br>    
                        <!-------------------------------------------------------------------->
-                       <div class="wrap-login100 p-l-55 p-r-55 p-t-15 p-b-54 topmob" style="background-color: #eee;">
+                       <div class="wrap-login100 p-l-55 p-r-55 p-t-25 p-b-54 topmob" style="background-color: #eee;">
                  <centre> <div class="row">
                     <div class="col-md-12"><span class="login100-form-title " style="font-family:Arial, Helvetica, sans-serif; padding:0px 20px 10px 0px;font-size: 30px;line-height: 1.3; " id="title_college">Attendee Students</span></div>
                         
@@ -139,6 +139,7 @@ border-width: 2px;
     padding: 20px 30px 20px 30px;
     border-radius: 5px;
     font-weight: 500;
+
 }
 #sv:hover{
     box-shadow: 0px 0px 10px black;

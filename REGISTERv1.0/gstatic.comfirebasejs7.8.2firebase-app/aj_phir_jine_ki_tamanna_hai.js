@@ -7,6 +7,7 @@ var collegeAmount = "";
 
 loadIt();
 */
+
 function loadIt(){
     document.getElementById("loading-spinner").style.display = "block";
     document.getElementById("main-content").style.display = "none";
@@ -47,6 +48,11 @@ $(document).keydown(function(e){
   }
 
   function myStudent(){
+    var a =  document.getElementById("search").value.trim();
+    if (a==""){
+      alert("Enter the SID first")
+    }
+    else{
     loadIt();
     var get_sid = document.getElementById("search").value.trim();
 
@@ -61,7 +67,7 @@ $(document).keydown(function(e){
           n =  doc.data()["name"];
           c =  doc.data()["college_name"];
           p =  doc.data()["contact"];
-          e =  doc.data()["email"];
+         // e =  doc.data()["email"];
           i++;
         });
           if (i==1) {
@@ -71,7 +77,7 @@ $(document).keydown(function(e){
              document.getElementById("name_student").innerHTML = n;
              document.getElementById("college_student").innerHTML = c;
              document.getElementById("phone_student").innerHTML = p;
-             document.getElementById("email_student").innerHTML = e;
+            // document.getElementById("email_student").innerHTML = e;
            //  document.getElementById("attendance_student").innerHTML = a;
           showIt();
 
@@ -83,44 +89,60 @@ $(document).keydown(function(e){
       }).catch(function(error) {
           console.log("Error getting document:", error);showIt();
       });
+    }
   }
   
   function addStudent(){
+    if (document.getElementById("attendance_student").value=="Choose here"){
+      alert("Select Attendance Type");
+    }
+    else{
     loadIt();
       var sid_student = document.getElementById("sid_student").innerHTML;
       var name_student = document.getElementById("name_student").innerHTML;
       var college_student = document.getElementById("college_student").innerHTML;
       var phone_student = document.getElementById("phone_student").innerHTML;
-      var email_student = document.getElementById("email_student").innerHTML;
-      var attendance_student = document.getElementById("attendance_student").innerHTML;
-    
-      var count = 0;
-
-      db.collection("Attendance")
-      .get().then((snapshot)=>{
-          snapshot.docs.forEach(doc=>{
-              count++;
+     // var email_student = document.getElementById("email_student").innerHTML;
+      var attendance_student = document.getElementById("attendance_student").value;
+      var get_sid = document.getElementById("search").value.trim();
+      
+      var docRef = db.collection("Attendance");
+  
+        docRef.where("sid" ,"==",get_sid).get().then(function(snapShot){
+          var i =0;
+          
+          snapShot.docs.forEach(doc=>{
+            i++;
           });
+          if (i != 0) {
+            alert("Student Already Attended the Event!!");
+          showIt();
 
-          if(count == 0){
-              db.collection("Attendance")
-              .add({
-                  sid : sid_student,
-                  name : name_student,
-                  college_name : college_student,
-                  email : email_student,
-                  contact : phone_student,
-                  attendance : attendance_student
-              }).then((snapshot="0")=>{
+          } else {
+                      db.collection("Attendance").add({
+                        sid : sid_student,
+                        name : name_student,
+                        college_name : college_student,
+                        contact : phone_student,
+                        attendance : attendance_student
+                })
+                .then(function() {
+                  alert("Student Added. Kindly Collect the Fee and give the ID Card!");
+                resetTheForm();
                 showIt();
-              })
-             
-          }else{
-           // resetTheForm();
-              window.alert("Student has already received the ID Card.");
-              showIt();
+                });
           }
-      });
+        });
 
   }
+}
 
+function resetTheForm(){
+    document.getElementById("sid_student").innerHTML="";
+    document.getElementById("name_student").innerHTML="";
+    document.getElementById("college_student").innerHTML="";
+    document.getElementById("phone_student").innerHTML="";
+    document.getElementById("attendance_student").value="Choose here";
+    document.getElementById("search").value="";
+}
+    
