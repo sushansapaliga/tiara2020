@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" oncontextmenu="return false">
+<head>
+    <title>Tiara'20 Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    
+    
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+     
+    <script src="gstatic.comfirebasejs7.8.2firebase-app/tableAndPdf.js"></script>
+    <link rel="icon" type="image/png" href="images/icons/logo.jpg"/>
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="css/loadingspinner.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="gstatic.comfirebasejs7.8.2firebase-app/aj_phir_jine_ki_tamanna_hai.js"></script>
+
+</head>
+    <body >
+ <div id="loading-spinner">
+            <div class="limiter">
+                <div class="container-login100" style="background-image: linear-gradient(90deg,#1ec1e2,#e713fd);">
+                    <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                        <div class="lds-facebook"><div></div><div></div><div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div id="main-content"> 
+        <div class="limiter">
+    <div class="container-login100" style="background-image: linear-gradient(90deg,#1ec1e2,#e713fd);">
+        
+        <div class="row"  >
+<!-------------------------------------section-------------------------------------------->
+       
+            <div class="col-md-12">
+                    <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54 topmob">
+             
+                 
+                        <centre><div class="row">
+                            <div class="col-md-12"><span class="login100-form-title " style="font-family: american_kestrel_condensedCn; padding:0px 20px 10px 0px;font-size: 50px;line-height: 1.3; " id="title_college">Tiara 2020 Registration Desk</span></div>
+                                
+                            </div>
+                            <br>
+                                        <span class="login100-form-title mo" style="padding:20px 20px 20px 20px;font-size: 20px;font-family: Poppins-Medium; background-color: red;color: white" id="amount">AMOUNT RECEIVED - Rs. </span></centre>
+                   <div class="row">
+                       <div class="col-md-4">
+               <div style="margin-top: 30px" class="wrap-input100 sr validate-input m-b-23" data-validate = "Name is reauired">
+                    <span class="label-input100"><b>Search SID</b></span>
+                    <input class="input100" type="text" name="name" id="search" placeholder="Enter SID">
+                    <span class="focus-input100" data-symbol="&#xf206;"></span>
+                </div>
+                           </div>
+                           <div class="col-md-4">
+                               <button onclick="myStudent()" class="pdfbtn" style="width: 100%;padding-top: 20px;border-radius: 5px; padding-bottom: 20px;">Search Student</button>
+                           </div>
+                       <div class="col-md-4">
+                        <button style="float: right;border-radius: 5px;background-color: red;" class ="pdfbtn" id="pdf" ><img src="images/print.png" style="padding-right: 20px;" > Get PDF</button>
+                       </div>
+                        
+                       </div> 
+                       <br><br>
+
+                       <!----------------------Table Section--------------------------------->
+                       <table>
+                           <tr><th>SID</th><th>Name</th><th>College</th><th>Phone</th><th>E - Mail</th><th>Attendance</th><th rowspan="2" style="background-color: white;"><button onclick="addStudent()" id="sv" >SAVE</button></th></tr>
+                           <tr><td><label id="sid_student"></label></td><td><label id="name_student"></label></td><td><label id="college_student"></label></td><td><label id="phone_student"></label></td><td><label id="email_student"></label></td><td><select id="attendance_student"><option disabled selected>Choose here</option><option>EVENTS Only</option><option>CONCERT Only</option><option>EVENT/CONCERT</option></select></td></tr>
+                       </table>
+                       <br><br>   
+                       <!-------------------------------------------------------------------->
+                       <div class="wrap-login100 p-l-55 p-r-55 p-t-15 p-b-54 topmob" style="background-color: #eee;">
+                 <centre> <div class="row">
+                    <div class="col-md-12"><span class="login100-form-title " style="font-family:Arial, Helvetica, sans-serif; padding:0px 20px 10px 0px;font-size: 30px;line-height: 1.3; " id="title_college">Attendee Students</span></div>
+                        
+                    </div>
+                    <br>
+                     <div id="tableHere"></div>
+                 </centre>
+                 </div>
+        </div>
+            </div>
+        </div>
+            </div>
+        </div>  
+
+    </div>
+        
+<style>
+#showM{
+    display: none;
+    line-height: 1.3;
+} 
+        .modal {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 10; /* Sit on top */
+padding-top: 50px; /* Location of the box */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: white; /* Fallback color */
+background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+background-color: #fff;
+margin: auto;
+padding: 20px;
+border: 1px solid #888;
+width: 80%;
+border: #c82df7;
+border-style: solid;
+border-width: 2px;
+}
+
+
+#sv{
+    background-color: seagreen;
+    color: white;
+    padding: 20px 30px 20px 30px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+#sv:hover{
+    box-shadow: 0px 0px 10px black;
+}
+         h4{
+             color: #c82df7;
+             text-transform: uppercase;
+         }
+         p{
+             color: #000;
+         }
+         #hi{
+             padding: 10px 30px 10px 30px ;
+             font-weight: 400;
+             color: white;
+             background-color: #c82df7;
+             border: solid 0px white;
+             box-shadow: 0px 0px 15px #c82df7;
+         }
+         td{
+             align-content: center;
+         }
+         th{
+             font-weight: 400;
+         }
+        </style>
+        <script>
+        function mega(){
+            document.getElementById('showM').style.display = 'block';
+        }
+            
+             var modal = document.getElementsByClassName("modal");
+
+        var b= document.getElementsByClassName("close1");
+
+        for(var i=0;i<b.length;i++){
+        b[i].onclick = function(){
+        for(var j=0;j<modal.length;j++){
+        modal[j].style.display = "none";
+                }
+            }
+        }
+
+        function disp(loc){
+        modal[loc].style.display = "block";
+        }
+        </script>
+          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+          <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+          <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.13/jspdf.plugin.autotable.min.js"></script>
+  
+    
+    
+
+    </body></html>
