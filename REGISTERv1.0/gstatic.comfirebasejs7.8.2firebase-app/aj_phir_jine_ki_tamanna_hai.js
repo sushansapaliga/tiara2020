@@ -29,7 +29,7 @@ $(document).keydown(function(e){
       .get().then((snapshot)=>{
           snapshot.docs.forEach(doc=>{
               count++;
-            table += "<tr><td>"+ doc.data()["sid"] + "</td><td>"+ doc.data()["name"] + "</td><td>" + doc.data()["college_name"] + "</td><td>" + doc.data()["contact"] + "</td><td>"+ doc.data()["attendance"] + "</td></tr>";
+            table += "<tr style='background-color:white;'><td>"+ doc.data()["sid"] + "</td><td>"+ doc.data()["name"] + "</td><td>" + doc.data()["college_name"] + "</td><td>" + doc.data()["contact"] + "</td><td>"+ doc.data()["attendance"] + "</td></tr>";
           })
           table += "</tbody></table>";
           document.getElementById("tableHere").innerHTML = table;
@@ -107,6 +107,10 @@ $(document).keydown(function(e){
           });
           if (i != 0) {
             alert("Student Already Attended the Event!!");
+            document.getElementById("sid_student").style.color='red';
+            document.getElementById("name_student").style.color='red';
+            document.getElementById("college_student").style.color='red';
+            document.getElementById("phone_student").style.color='red';
           showIt();
 
           } else {
@@ -120,7 +124,9 @@ $(document).keydown(function(e){
                 .then(function() {
                   alert("Student Added. Kindly Collect the Fee and give the ID Card!");
                 resetTheForm();
+                getStudent()
                 showIt();
+                
                 });
           }
         });
