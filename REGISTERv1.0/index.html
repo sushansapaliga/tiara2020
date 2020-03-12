@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" oncontextmenu="return false">
 <head>
-    <title>Tiara'20 Register</title>
+    <title>Tiara'20 DESK</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.4.1.js"
@@ -31,7 +31,7 @@
 
 </head>
     <body onload=" getStudent() ">
- <div id="loading-spinner">
+ <div id="loading-spinner" style="display: none;">
             <div class="limiter">
                 <div class="container-login100" style="background-image: linear-gradient(90deg,#1ec1e2,#e713fd);">
                     <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
@@ -80,13 +80,13 @@
                        <!----------------------Table Section--------------------------------->
                        <table>
                            <tr><th>SID</th><th>Name</th><th>College</th><th>Phone</th><!--<th>E - Mail</th>---><th>Attendance</th><th rowspan="2" style="background-color: white;padding-right: 0px;" ><button onclick="addStudent()" id="sv" style="float: right;" >SAVE</button></th></tr>
-                           <tr style="font-weight: 600;color: black;"><td style="padding-top: 30px;padding-bottom: 30px;"><label id="sid_student"></label></td><td><label id="name_student"></label></td><td><label id="college_student"></label></td><td><label id="phone_student"></label></td><!---<td><label id="email_student"></label></td>--><td><select id="attendance_student"><option disabled selected>Choose here</option><option>EVENTS Only</option><option>CONCERT Only</option><option>EVENT/CONCERT</option></select></td></tr>
+                           <tr style="font-weight: 600;color: black;"><td style="padding-top: 30px;padding-bottom: 30px;background-color: #eee;"><label id="sid_student"></label></td><td style="background-color: #eee;"><label id="name_student"></label></td><td style="background-color: #eee;"><label id="college_student"></label></td><td style="background-color: #eee;"><label id="phone_student"></label></td><!---<td><label id="email_student"></label></td>--><td style="background-color: #eee;"><select id="attendance_student"><option disabled selected>Choose here</option><option>EVENTS Only</option><option>CONCERT Only</option><option>EVENT/CONCERT</option></select></td></tr>
                        </table>
-                       <br><hr style="border: 2px solid red;">  <br>    
+                       <br><hr style="border: 3px solid #eee;">  <br>    
                        <!-------------------------------------------------------------------->
-                       <div class="wrap-login100 p-l-55 p-r-55 p-t-25 p-b-54 topmob" style="background-color: #eee;">
+                       <div class="wrap-login100 p-l-55 p-r-55 p-t-25 p-b-54 topmob" style="background-color:#eee;">
                  <centre> <div class="row">
-                    <div class="col-md-12"><span class="login100-form-title " style="font-family:Arial, Helvetica, sans-serif; padding:0px 20px 10px 0px;font-size: 30px;line-height: 1.3; " id="title_college">Attendee Students</span></div>
+                    <div class="col-md-12"><span class="login100-form-title " style="font-family:Arial, Helvetica, sans-serif; padding:0px 20px 10px 0px;font-size: 40px;line-height: 1.3; " id="title_college">Attendee Details</span></div>
                         
                     </div>
                     <br>
