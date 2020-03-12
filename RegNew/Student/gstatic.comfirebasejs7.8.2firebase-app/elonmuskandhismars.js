@@ -155,7 +155,7 @@ function registerStudent(){
         sid: studentSID
     }).then((snapShot=0)=>{
         sendMail(name,email,studentSID);
-        disp(2,"Successfully registered.");
+        disp(2,"Hi "+name+",<br>You have successfully register for Tiara 2k20. Kindly check your email for more information.<br><br>Your SID is <b style='color:#ff4528;font-size:18px'>"+ studentSID +"</b>.You can now use this SID to register for events (MEGA events).<br><br><b style='color:#ff4528'>NOTE: Please take screenshot of this for future reference.</b>. ");
     });
 }
 
