@@ -8,9 +8,6 @@ function showIt(){
     document.getElementById("main-content").style.display = "block";
 }
 
-
-
-
 const db = firebase.firestore();
  
 
@@ -21,8 +18,8 @@ $(document).keydown(function(e){
 });
 
   function getStudent(){
-    //loadIt();
-      var table = "<table id='example'><thead><tr><th>SID</th><th>Name</th><th>College</th><th>Phone</th><th>Attendance</th></tr></thead><tbody id='table'>";
+   loadIt();
+        var table = "<table id='example'><thead><tr><th>SID</th><th>Name</th><th>College</th><th>Phone</th><th>Attendance</th></tr></thead><tbody id='table'>";
       var count = 0 ; 
       db.collection("Attendance")
       .orderBy("college_name")
@@ -34,8 +31,10 @@ $(document).keydown(function(e){
           table += "</tbody></table>";
           document.getElementById("tableHere").innerHTML = table;
           collegeAmount = count *200 ; 
-         document.getElementById("amount").innerHTML = "Amount Received : Rs. "+collegeAmount+".";
+         document.getElementById("amount").innerHTML = "Amount Received : Rs. "+collegeAmount+"  <br><br>    Total Attendance : "+count+"";
       });
+      showIt();
+  
   }
 
   function myStudent(){

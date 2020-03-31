@@ -13,16 +13,16 @@
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
 
-   $('#pdf').on("click", function(){
-     $('#example').tableHTMLExport({
-         type:'pdf',
-         filename:'Attendee_List.pdf'
-     });
-  });
  
  (function($){
  
- 
+  
+    $('#pdf').on("click", function(){
+        $('#example').tableHTMLExport({
+            type:'pdf',
+            filename:'Attendee_List.pdf'
+        });
+     });
  
      $.fn.extend({
          tableHTMLExport: function(options) {

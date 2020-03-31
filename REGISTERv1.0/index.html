@@ -12,6 +12,9 @@
     <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.13/jspdf.plugin.autotable.min.js"></script>
+ 
      
     <script src="gstatic.comfirebasejs7.8.2firebase-app/tableAndPdf.js"></script>
     <link rel="icon" type="image/png" href="images/icons/logo.jpg"/>
@@ -58,12 +61,12 @@
                                 
                             </div>
                             <br>
-                                        <span class="login100-form-title mo" style="padding:20px 20px 20px 20px;font-size: 20px;font-family: Poppins-Medium; background-color: red;color: white" id="amount">AMOUNT RECEIVED - Rs. </span></centre>
+                                        <span class="login100-form-title mo" style="padding:10px ;font-size: 20px;font-family: Poppins-Medium; background-color: red;color: white" id="amount"></span></centre>
                    <div class="row">
                        <div class="col-md-4">
                <div style="margin-top: 30px" class="wrap-input100 sr validate-input m-b-23" data-validate = "Name is reauired">
                     <span class="label-input100"><b>Search SID</b></span>
-                    <input class="input100" type="text" name="name" id="search" placeholder="Enter SID">
+                    <input class="input100" type="text" name="name" id="search" placeholder="Enter SID" onclick="resetTheForm()">
                     <span class="focus-input100" data-symbol="&#xf206;"></span>
                 </div>
                            </div>
@@ -187,12 +190,5 @@ border-width: 2px;
         modal[loc].style.display = "block";
         }
         </script>
-          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-          <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-          <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.13/jspdf.plugin.autotable.min.js"></script>
-  
-    
-    
-
+          
     </body></html>
