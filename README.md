@@ -6,7 +6,7 @@
 
 Tiara is National Level Tech Fest which is held in St. Joseph Engineering College, Vamanjoor.
  
-A online registration facility were students can generate an unique 8-digit letters called SID (Student Identification) and register along with their teammates of same college using the SID they have generated before.
+A online registration facility were students can generate an unique 9-digit letters called SID (Student Identification) and register along with their teammates of same college using the SID they have generated before.
 
 #### Updated Registration website for Student and Teacher can be found in folder `RegNew`.
 
